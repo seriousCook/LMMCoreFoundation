@@ -1,0 +1,6 @@
+framework module LMMCoreFoundation {
+  umbrella header "LMMCoreFoundation-umbrella.h"
+
+  export *
+  module * { export * }
+}

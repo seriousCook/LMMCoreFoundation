@@ -1,0 +1,16 @@
+PODS:
+  - LMMCoreFoundation (0.1.0)
+
+DEPENDENCIES:
+  - LMMCoreFoundation (from `../`)
+
+EXTERNAL SOURCES:
+  LMMCoreFoundation:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LMMCoreFoundation: 8c4d5be092dfe4d39b2afe626c6603f56519f3fe
+
+PODFILE CHECKSUM: e191680879178d6c0e362d344aeb295eca5c50cb
+
+COCOAPODS: 1.5.3

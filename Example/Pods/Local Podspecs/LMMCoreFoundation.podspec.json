@@ -1,0 +1,22 @@
+{
+  "name": "LMMCoreFoundation",
+  "version": "0.1.0",
+  "summary": "A short description of LMMCoreFoundation.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/马敬龙/LMMCoreFoundation",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "马敬龙": "majinglong@cheyipai.com"
+  },
+  "source": {
+    "git": "https://github.com/马敬龙/LMMCoreFoundation.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "LMMCoreFoundation/Classes/**/*"
+}
