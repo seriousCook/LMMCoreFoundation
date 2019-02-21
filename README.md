@@ -22,7 +22,7 @@ pod 'LMMCoreFoundation'
 
 ## Author
 
-马敬龙, majinglong@cheyipai.com
+马敬龙, mjinglong@126.com
 
 ## License
 
