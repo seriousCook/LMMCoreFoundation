@@ -10,9 +10,3 @@
 #endif
 #endif
 
-#import "UIButton+LMM.h"
-#import "NSString+LMMAttribute.h"
-
-FOUNDATION_EXPORT double LMMCoreFoundationVersionNumber;
-FOUNDATION_EXPORT const unsigned char LMMCoreFoundationVersionString[];
-

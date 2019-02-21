@@ -7,8 +7,10 @@
 //
 
 #import "LMMViewController.h"
-
+#import "UIButton+LMM.h"
 @interface LMMViewController ()
+
+@property (nonatomic, strong) UIButton * testButton;
 
 @end
 
@@ -17,7 +19,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.testButton = UIButton.LMM_BUTTON
+    .lmm_font([UIFont systemFontOfSize:12.])
+    .lmm_title(@"",UIControlStateNormal)
+    .lmm_titleColor([UIColor redColor],UIControlStateNormal)
+    .lmm_superView(self.view)
+    .lmm_layoutMasonry(^(MASConstraintMaker *make){
+        
+    })
+    .lmm_attributedtitle_1(@"",UIControlStateNormal, ^NSRange(NSMutableDictionary *dict){
+        
+        [dict setObject:@"" forKey:@""];
+        return NSMakeRange(0, 0);
+    });
+    
 }
 
 - (void)didReceiveMemoryWarning

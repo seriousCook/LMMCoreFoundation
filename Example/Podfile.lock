@@ -1,15 +1,22 @@
 PODS:
-  - LMMCoreFoundation (0.1.0)
+  - LMMCoreFoundation (0.0.1):
+    - Masonry
+  - Masonry (1.1.0)
 
 DEPENDENCIES:
   - LMMCoreFoundation (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
 
 EXTERNAL SOURCES:
   LMMCoreFoundation:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LMMCoreFoundation: 8c4d5be092dfe4d39b2afe626c6603f56519f3fe
+  LMMCoreFoundation: 9326b3cb5ac6577184fa6b26709bff7d58a98e9d
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
 PODFILE CHECKSUM: e191680879178d6c0e362d344aeb295eca5c50cb
 

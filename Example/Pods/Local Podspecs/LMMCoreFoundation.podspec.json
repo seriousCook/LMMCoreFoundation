@@ -1,22 +1,31 @@
 {
   "name": "LMMCoreFoundation",
-  "version": "0.1.0",
-  "summary": "A short description of LMMCoreFoundation.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/马敬龙/LMMCoreFoundation",
+  "version": "0.0.1",
+  "summary": "建设常用基础库",
+  "description": "常用基础库",
+  "homepage": "https://github.com/seriousCook/LMMCoreFoundation",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "马敬龙": "majinglong@cheyipai.com"
+    "马敬龙": "majinglong@126.com"
   },
   "source": {
-    "git": "https://github.com/马敬龙/LMMCoreFoundation.git",
-    "tag": "0.1.0"
+    "git": "git@github.com:seriousCook/LMMCoreFoundation.git",
+    "tag": "0.0.1"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "LMMCoreFoundation/Classes/**/*"
+  "source_files": "LMMCoreFoundation/Classes/**/*",
+  "frameworks": [
+    "UIKit",
+    "Foundation"
+  ],
+  "dependencies": {
+    "Masonry": [
+
+    ]
+  }
 }
