@@ -40,4 +40,5 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit', 'Foundation'
   
   s.dependency 'Masonry'
+  s.dependency 'AFNetworking'
 end

@@ -9,7 +9,7 @@
     "file": "LICENSE"
   },
   "authors": {
-    "马敬龙": "majinglong@126.com"
+    "马敬龙": "mjinglong@126.com"
   },
   "source": {
     "git": "git@github.com:seriousCook/LMMCoreFoundation.git",
@@ -25,6 +25,9 @@
   ],
   "dependencies": {
     "Masonry": [
+
+    ],
+    "AFNetworking": [
 
     ]
   }

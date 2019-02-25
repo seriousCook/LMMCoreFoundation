@@ -1,5 +1,21 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
   - LMMCoreFoundation (0.0.1):
+    - AFNetworking
     - Masonry
   - Masonry (1.1.0)
 
@@ -8,6 +24,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AFNetworking
     - Masonry
 
 EXTERNAL SOURCES:
@@ -15,7 +32,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LMMCoreFoundation: 9326b3cb5ac6577184fa6b26709bff7d58a98e9d
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  LMMCoreFoundation: 648c516a1876b9ba3cd393714b49b34f43f4360e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
 PODFILE CHECKSUM: e191680879178d6c0e362d344aeb295eca5c50cb

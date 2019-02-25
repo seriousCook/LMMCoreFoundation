@@ -11,6 +11,9 @@
 #endif
 
 #import "UIButton+LMM.h"
+#import "NSObject+LMMFileManager.h"
+#import "LMMApi.h"
+#import "LMMNet.h"
 #import "NSString+LMMAttribute.h"
 
 FOUNDATION_EXPORT double LMMCoreFoundationVersionNumber;
