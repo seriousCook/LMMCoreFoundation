@@ -9,6 +9,10 @@
 
 @implementation NSObject (LMMFileManager)
 
+- (NSFileManager *)lmmManager
+{
+    return [NSFileManager defaultManager];
+}
 
 - (NSString *)lmm_Document
 {
@@ -97,6 +101,19 @@
         [data writeToFile:filePath atomically:YES];
     }
     return writeSucc;
+}
+
+- (BOOL)lmm_removeFile:(NSString *)filepath
+{
+    BOOL isRemove = NO;
+    BOOL isHaveFilePath = [self lmm_hasPath:filepath];
+    if (!isHaveFilePath) {
+        isRemove = YES;
+    }
+    NSError * error;
+    isRemove = [self.lmmManager removeItemAtPath:filepath error:&error];
+    NSLog(@"LMM_<%@>removeLocalCacheFail__:%@",NSStringFromSelector(_cmd),error);
+    return isRemove;
 }
 
 
