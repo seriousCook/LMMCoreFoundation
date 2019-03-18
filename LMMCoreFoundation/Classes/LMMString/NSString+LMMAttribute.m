@@ -140,4 +140,56 @@
     return mStr;
 }
 
+
+#pragma mark-
+- (NSAttributedString *)lmm_setThroughLine:(NSString *)string otherAttrs:(NSDictionary * (^)(void))otherAttrs
+{
+    if (!self.length) {
+        return nil;
+    }
+    return [self lmm_setThroughLineWithRange:[self rangeOfString:string] otherAttrs:otherAttrs];
+}
+- (NSAttributedString *)lmm_setThroughLineWithRange:(NSRange)range otherAttrs:(NSDictionary * (^)(void))otherAttrs
+{
+    if (!self.length) {
+        return nil;
+    }
+    if (self.length < range.length+range.location) {
+        range.length = self.length-range.location;
+    }
+    NSMutableAttributedString * mStr = [[NSMutableAttributedString alloc] initWithString:self];
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
+    [dict setObject:[NSNumber numberWithInteger:NSUnderlineStyleSingle] forKey:NSStrikethroughStyleAttributeName];
+    NSDictionary * otherDict = otherAttrs();
+    [dict addEntriesFromDictionary:otherDict];
+    [mStr addAttributes:dict range:range];
+    
+    return mStr;
+}
+
+- (NSAttributedString *)lmm_setUnderLine:(NSString *)string otherAttrs:(NSDictionary * (^)(void))otherAttrs
+{
+    if (!self.length) {
+        return nil;
+    }
+    return [self lmm_setUnderLineWithRange:[self rangeOfString:string] otherAttrs:otherAttrs];
+}
+- (NSAttributedString *)lmm_setUnderLineWithRange:(NSRange)range otherAttrs:(NSDictionary * (^)(void))otherAttrs
+{
+    if (!self.length) {
+        return nil;
+    }
+    if (self.length < range.length+range.location) {
+        range.length = self.length-range.location;
+    }
+    NSMutableAttributedString * mStr = [[NSMutableAttributedString alloc] initWithString:self];
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
+    [dict setObject:[NSNumber numberWithInteger:NSUnderlineStyleSingle] forKey:NSUnderlineStyleAttributeName];
+    NSDictionary * otherDict = otherAttrs();
+    [dict addEntriesFromDictionary:otherDict];
+    [mStr addAttributes:dict range:range];
+    
+    return mStr;
+}
+
 @end

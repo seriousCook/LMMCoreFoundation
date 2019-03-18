@@ -7,7 +7,8 @@
 
 #import "LMMNet.h"
 #import "AFNetworking.h"
-
+#import "LMMResponseHandlerProtocol.h"
+#import "LMMResponseHandler.h"
 @interface LMMNet ()
 
 @property (nonatomic, copy) NSString *url; //请求的URL String
@@ -28,7 +29,9 @@
     return [[LMMNet alloc] init];
 }
 
-
+- (void)cancle {
+    [self.dataTask cancel];
+}
 
 - (void)request:(NSString *)url
          params:(NSDictionary *)params
@@ -61,6 +64,7 @@
     };
     
     AFHTTPSessionManager * manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:self.configuration];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html;charset=utf-8",@"text/html", @"application/json", @"text/json", @"text/javascript",@"text/plain", nil];
     
     if (self.rs == JSONRequestSerializer) {
         manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -84,7 +88,19 @@
 
 - (void)handleResponseTask:(NSURLSessionDataTask *)task object:(id)object error:(NSError *)error
 {
-    
+    self.dataTask = task;
+    id<LMMNetResponseHandlerProtocol> handlerInstance;
+    if (self.handler) {
+        handlerInstance = [[self.handler alloc] init];
+    } else {
+        handlerInstance = [[LMMResponseHandler alloc] init];
+    }
+    //如果协议对象存在&&实现了协议反复，先走协议处理，处理特定的
+    if (handlerInstance && [handlerInstance respondsToSelector:@selector(lmm_handleResponse:object:error:resultCallback:)]) {
+        [handlerInstance lmm_handleResponse:self object:object error:error resultCallback:self.callback];
+    } else {
+        self.callback(self, object, error);
+    }
 }
 
 

@@ -9,22 +9,27 @@
 
 @interface LMMApi()
 
-@property (nonatomic, weak) LMMNet * net;
+@property (nonatomic, strong) LMMNet * net;
 
 @end
 
 @implementation LMMApi
 
++ (instancetype)API
+{
+    return [[self alloc] init];
+}
+
 /********可复写方法**********/
 
 - (NSString *)apiURLHost
 {
-    return @"";
+    return nil;
 }
 
 - (NSString *)apiURLPath
 {
-    return @"";
+    return nil;
 }
 
 - (RequestType)apiReqeustType
@@ -60,18 +65,42 @@
 
 /********可复写方法**********/
 
+- (void)apiCancel
+{
+    [self.net cancle];
+}
 
 - (void)apiWithParams:(NSDictionary *)params callback:(void(^)(id, NSError *))callback
 {
+    [self _apiWithParams:params progress:nil callback:callback];
+}
+
+
+- (void)apiWithParams:(NSDictionary *)params progress:(void(^)(NSProgress *))progress callback:(void(^)(id, NSError *))callback
+{
+    [self _apiWithParams:params progress:progress callback:callback];
+}
+
+#pragma mark- private---
+- (void)_apiWithParams:(NSDictionary *)params progress:(void(^)(NSProgress *))progress callback:(void(^)(id, NSError *))callback
+{
     self.net = LMMNet.Net;
     
-    [self.net request:@""
-               params:@{}
-                 type:1
-           serializer:1
-               config:nil];
+    [self.net request:[NSString stringWithFormat:@"%@",self.apiURLHost]
+               params:[self apiHandleParam:params]
+                 type:self.apiReqeustType
+           serializer:self.apiRequestSerializer
+               config:self.apiSessionConfiguration];
     
+    [self.net response:progress
+              callback:^(LMMNet * _Nonnull net, id  _Nonnull responseObject, NSError * _Nonnull error) {
+                  id object = [self apiObjectWithResponse:responseObject error:error net:self.net];
+                  if (callback) {
+                      callback(object,error);
+                  }
+    }];
     
+    [self.net start];
 }
 
 

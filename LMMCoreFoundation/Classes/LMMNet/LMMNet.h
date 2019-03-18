@@ -32,11 +32,18 @@ typedef void (^ProgressCallback)(NSProgress *progress);
 
 + (LMMNet *)Net;
 
+- (void)cancle;
+
 - (void)request:(NSString *)url
          params:(NSDictionary *)params
            type:(RequestType)type
      serializer:(RequestSerializer)rs
          config:(NSURLSessionConfiguration *)config;
+
+- (void)response:(ProgressCallback)progressCallback
+        callback:(NetCallback)callback;
+
+- (void)start;
 
 @end
 

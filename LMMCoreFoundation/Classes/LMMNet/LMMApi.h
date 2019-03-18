@@ -11,7 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LMMApi : NSObject
 
-@property (nonatomic, weak, readonly) LMMNet * net;
+@property (nonatomic, strong, readonly) LMMNet * net;
+
++ (instancetype)API;
 
 /********可复写方法**********/
 
@@ -61,6 +63,10 @@ NS_ASSUME_NONNULL_BEGIN
  *
  */
 - (void)apiCancel;
+
+
+- (void)apiWithParams:(NSDictionary *)params callback:(void(^)(id, NSError *))callback;
+- (void)apiWithParams:(NSDictionary *)params progress:(void(^)(NSProgress *))progress callback:(void(^)(id, NSError *))callback;
 
 @end
 

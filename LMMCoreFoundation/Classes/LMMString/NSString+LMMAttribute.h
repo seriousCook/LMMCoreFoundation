@@ -68,6 +68,16 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSAttributedString *)lmm_setRanges:(NSArray <NSValue *>*)rangeArray
                 enumerateAttrsBlock:(NSDictionary *(^)(NSString* str, int strsIndex))attrsBlock;
 
+#pragma mark- 特定自定义
+/**
+ *  设置中划线
+ */
+- (NSAttributedString *)lmm_setThroughLine:(NSString *)string otherAttrs:(NSDictionary * (^)(void))otherAttrs;
+- (NSAttributedString *)lmm_setThroughLineWithRange:(NSRange)range otherAttrs:(NSDictionary * (^)(void))otherAttrs;
+
+- (NSAttributedString *)lmm_setUnderLine:(NSString *)string otherAttrs:(NSDictionary * (^)(void))otherAttrs;
+- (NSAttributedString *)lmm_setUnderLineWithRange:(NSRange)range otherAttrs:(NSDictionary * (^)(void))otherAttrs;
+
 @end
 
 NS_ASSUME_NONNULL_END
