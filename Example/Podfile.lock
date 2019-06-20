@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - BmobSDK (2.3.1)
   - LMMCoreFoundation (0.0.1):
     - AFNetworking
     - Masonry
@@ -275,18 +276,23 @@ PODS:
     - QMUIKit/QMUILog
   - QMUIKit/QMUIResources (2.9.3)
   - QMUIKit/QMUIWeakObjectContainer (2.9.3)
+  - WebViewJavascriptBridge (6.0.3)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
+  - BmobSDK
   - LMMCoreFoundation (from `../`)
   - QMUIKit
+  - WebViewJavascriptBridge
   - YYModel
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - BmobSDK
     - Masonry
     - QMUIKit
+    - WebViewJavascriptBridge
     - YYModel
 
 EXTERNAL SOURCES:
@@ -295,11 +301,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  BmobSDK: e0f9e4b451233a80af63a8ae4f2d239474bf567b
   LMMCoreFoundation: 648c516a1876b9ba3cd393714b49b34f43f4360e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   QMUIKit: 5b8f0a3ab60e42af1310bd40a6fe1b54d612d15c
+  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: f2768c9f6c98b34806853413bb5e8b4d8f7c1316
+PODFILE CHECKSUM: 1de82f536b34b80e585a1a6c0c0d3f59c065e5b9
 
 COCOAPODS: 1.5.3

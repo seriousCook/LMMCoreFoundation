@@ -64,8 +64,9 @@
     };
     
     AFHTTPSessionManager * manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:self.configuration];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html;charset=utf-8",@"text/html", @"application/json", @"text/json", @"text/javascript",@"text/plain", nil];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/html", @"application/json", @"text/json", @"text/javascript",@"text/plain", nil];
     
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     if (self.rs == JSONRequestSerializer) {
         manager.requestSerializer = [AFJSONRequestSerializer serializer];
     }

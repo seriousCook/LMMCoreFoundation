@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Type</key>
+		<string>1</string>
+		<key>a</key>
+		<string></string>
+		<key>b</key>
+		<string></string>
+		<key>bestanswer</key>
+		<string>变更车道或超车不开启转向灯属于违法行为。现在的违规，违章统称违法行为，所以是对的。</string>
+		<key>bestanswerid</key>
+		<string>2711859</string>
+		<key>c</key>
+		<string></string>
+		<key>d</key>
+		<string></string>
+		<key>id</key>
+		<string>2042</string>
+		<key>imageurl</key>
+		<string></string>
+		<key>question</key>
+		<string>变更车道或超车不开启转向灯属于违法行为。</string>
+		<key>sinaimg</key>
+		<string></string>
+		<key>ta</key>
+		<string>1</string>
+	</dict>
+	<dict>
+		<key>Type</key>
+		<string>1</string>
+		<key>a</key>
+		<string></string>
+		<key>b</key>
+		<string></string>
+		<key>bestanswer</key>
+		<string>造成该事故的原因是货车上货物固定不牢，货物遗洒导致后面的机动车事故，货车应负全部责任</string>
+		<key>bestanswerid</key>
+		<string>3086212528679682162</string>
+		<key>c</key>
+		<string></string>
+		<key>d</key>
+		<string></string>
+		<key>id</key>
+		<string>8009</string>
+		<key>imageurl</key>
+		<string>44170.webp</string>
+		<key>question</key>
+		<string>如图所示，造成事故的原因是货车遗洒货物，货车负全部责任。</string>
+		<key>sinaimg</key>
+		<string>44170.webp</string>
+		<key>ta</key>
+		<string>1</string>
+	</dict>
+</array>
+</plist>

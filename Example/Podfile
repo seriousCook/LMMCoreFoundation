@@ -8,8 +8,8 @@ target 'LMMCoreFoundation_Example' do
   pod 'YYModel'
   pod 'QMUIKit'
 
-  
-  
+  pod 'WebViewJavascriptBridge'
+  pod 'BmobSDK'
   
   
   

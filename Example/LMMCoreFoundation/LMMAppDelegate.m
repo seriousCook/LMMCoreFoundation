@@ -7,12 +7,23 @@
 //
 
 #import "LMMAppDelegate.h"
-
+#import "LMMViewController.h"
+#import <BmobSDK/Bmob.h>
 @implementation LMMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+     [Bmob registerWithAppKey:@"1f99e20ee0d921997dc2d00618bc6d0b"];
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    LMMViewController * vc = [[LMMViewController alloc] init];
+    UINavigationController * naviC = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    self.window.rootViewController = naviC;
+    
     return YES;
 }
 
