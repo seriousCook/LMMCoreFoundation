@@ -13,7 +13,7 @@
 -(NSString *)apiURLHost
 {
     return @"http://mnks.jxedt.com/ckm1/get_question";
-    return @"http://123.206.88.146./dfyxf/study/conn.do";
+    
 }
 
 - (RequestType)apiReqeustType
