@@ -13,6 +13,7 @@
 #import "UIButton+LMM.h"
 #import "UIColor+LMM.h"
 #import "UILabel+LMM.h"
+#import "NSObject+LMMBundle.h"
 #import "NSObject+LMMFileManager.h"
 #import "LMMCommonMethod.h"
 #import "LMMCustomNavigationBarTransitionProtocol.h"

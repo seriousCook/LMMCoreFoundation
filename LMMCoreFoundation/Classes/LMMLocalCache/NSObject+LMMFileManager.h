@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)lmm_createPath:(NSString *)path;
 
 /**
- *  创建路径
+ *  生成路径
  */
 - (NSString *)lmm_DoumentWithSubpath:(NSString *)path;
 
@@ -47,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)lmm_tmpWithSubpath:(NSString *)path;
 
 /**
- *  写入沙盒，可写入：图片、字典、数组
+ *  写入沙盒，可写入：字符串、图片、字典、数组
  */
 - (BOOL)lmm_writeFile:(id)file filePath:(NSString *)filePath;
 

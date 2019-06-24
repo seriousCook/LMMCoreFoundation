@@ -10,7 +10,7 @@ target 'LMMCoreFoundation_Example' do
 
   pod 'WebViewJavascriptBridge'
   pod 'BmobSDK'
-  
+  pod 'Masonry'
   
   
   target 'LMMCoreFoundation_Tests' do

@@ -282,6 +282,7 @@ PODS:
 DEPENDENCIES:
   - BmobSDK
   - LMMCoreFoundation (from `../`)
+  - Masonry
   - QMUIKit
   - WebViewJavascriptBridge
   - YYModel
@@ -308,6 +309,6 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 1de82f536b34b80e585a1a6c0c0d3f59c065e5b9
+PODFILE CHECKSUM: a9f6c127e47bb65cc3052a9d4ccfcbd7f99cc83a
 
 COCOAPODS: 1.5.3

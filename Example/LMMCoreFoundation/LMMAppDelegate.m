@@ -8,12 +8,15 @@
 
 #import "LMMAppDelegate.h"
 #import "LMMViewController.h"
+#import "LMMCourseViewController.h"
 #import <BmobSDK/Bmob.h>
+#import "NoticeEntryViewController.h"
+
 @implementation LMMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-     [Bmob registerWithAppKey:@"1f99e20ee0d921997dc2d00618bc6d0b"];
+     [Bmob registerWithAppKey:@"0d3926669974c748d51050c3feffa4f7"];
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -22,7 +25,13 @@
     LMMViewController * vc = [[LMMViewController alloc] init];
     UINavigationController * naviC = [[UINavigationController alloc] initWithRootViewController:vc];
     
-    self.window.rootViewController = naviC;
+    LMMCourseViewController * vc1 = [[LMMCourseViewController alloc] init];
+    UINavigationController * navi1 = [[UINavigationController alloc] initWithRootViewController:vc1];
+    
+    UITabBarController * tabVC = [[UITabBarController alloc] init];
+    tabVC.viewControllers = @[naviC, navi1];
+    
+    self.window.rootViewController = tabVC;
     
     return YES;
 }

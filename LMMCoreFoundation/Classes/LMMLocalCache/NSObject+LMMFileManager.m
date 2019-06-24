@@ -33,8 +33,7 @@
 //文件路径是否存在
 - (BOOL)lmm_hasPath:(NSString *)path
 {
-    NSFileManager * manager = [NSFileManager defaultManager];
-    return [manager fileExistsAtPath:path];
+    return [self.lmmManager fileExistsAtPath:path];
 }
 //创建文件路径
 - (BOOL)lmm_createPath:(NSString *)path
@@ -42,9 +41,8 @@
     BOOL isCreate = YES;
     if (![self lmm_hasPath:path]) {
         NSError * error;
-        NSFileManager * manager = [NSFileManager defaultManager];
-        isCreate = [manager createDirectoryAtPath:path withIntermediateDirectories:NO attributes:nil error:&error];
-        NSLog(@"LMM_<%@>createLocalCacheFail__:%@",NSStringFromSelector(_cmd),error);
+        isCreate = [self.lmmManager createDirectoryAtPath:path withIntermediateDirectories:NO attributes:nil error:&error];
+        NSLog(@"LMM_<%@>createLocalCacheFail__:%@___%d",NSStringFromSelector(_cmd),error,isCreate);
         return isCreate;
     }
     return isCreate;
@@ -90,16 +88,19 @@
 {
     BOOL writeSucc = NO;
     
-    [file writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    NSData  *data = UIImageJPEGRepresentation((UIImage *)file, 1.0);
+    writeSucc =[file writeToFile:filePath atomically:YES];
     
-    if ([file isKindOfClass:NSArray.class]) {
-        writeSucc = [(NSArray *)file writeToFile:filePath atomically:YES];
-    } else if ([file isKindOfClass:NSDictionary.class]) {
-        writeSucc = [(NSDictionary *)file writeToFile:filePath atomically:YES];
-    } else if ([filePath isKindOfClass:UIImage.class]) {
-        NSData  *data = UIImagePNGRepresentation((UIImage *)file);
-        [data writeToFile:filePath atomically:YES];
-    }
+//    if ([file isKindOfClass:[NSString class]]) {
+//        writeSucc = [file writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+//    } else if ([file isKindOfClass:[NSArray class]]) {
+//        writeSucc = [(NSArray *)file writeToFile:filePath atomically:YES];
+//    } else if ([file isKindOfClass:[NSDictionary class]]) {
+//        writeSucc = [(NSDictionary *)file writeToFile:filePath atomically:YES];
+//    } else if ([file isKindOfClass:[UIImage class]]) {
+//        NSData  *data = UIImagePNGRepresentation((UIImage *)file);
+//        writeSucc =[data writeToFile:filePath atomically:YES];
+//    }
     return writeSucc;
 }
 
