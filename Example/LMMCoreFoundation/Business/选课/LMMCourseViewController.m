@@ -30,7 +30,7 @@
     
     self.dataArray = [self lmm_readBundleJsonFileWithName:@"标志"];
     
-    
+//    [self re]
     [self start:0];
 }
 
